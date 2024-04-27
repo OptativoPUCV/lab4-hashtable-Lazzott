@@ -316,3 +316,25 @@ hashmap.c:135:48: error: expected statement before ‘)’ token
 cc1: all warnings being treated as errors
 Compilation failed
 4e1a52b
+Sat 27 Apr 2024 11:00:11 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:135:14: error: expected ‘(’ before ‘map’
+  135 |           if map->buckets[map->current] == NULL)
+      |              ^~~
+      |              (
+hashmap.c:135:26: error: statement with no effect [-Werror=unused-value]
+  135 |           if map->buckets[map->current] == NULL)
+      |              ~~~~~~~~~~~~^~~~~~~~~~~~~~
+hashmap.c:135:11: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  135 |           if map->buckets[map->current] == NULL)
+      |           ^~
+hashmap.c:135:48: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  135 |           if map->buckets[map->current] == NULL)
+      |                                                ^
+hashmap.c:135:48: error: expected statement before ‘)’ token
+cc1: all warnings being treated as errors
+Compilation failed
+d7093e4
