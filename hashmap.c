@@ -54,6 +54,7 @@ void insertMap(HashMap * map, char * key, void * value)
 
 void enlarge(HashMap * map) 
 {
+    if(map==NULL) return;
     enlarge_called = 1;//no borrar (testing purposes)
     Pair ** buckets_old = map->buckets;
     long capacity_old = map->capacity;
