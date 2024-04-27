@@ -1,0 +1,57 @@
+Sat 27 Apr 2024 09:37:47 PM UTC: 
+In file included from hashmap.c:6,
+                 from test.c:4:
+hashmap.h: In function ‘insertMap’:
+hashmap.h:24:34: error: invalid use of incomplete typedef ‘HashMap’
+   24 |     long hash = (long)key % table->capacity;
+      |                                  ^~
+hashmap.h:25:23: error: invalid use of incomplete typedef ‘HashMap’
+   25 |     Pair * aux = table->buckets[hash];
+      |                       ^~
+hashmap.h:28:14: error: invalid use of incomplete typedef ‘HashMap’
+   28 |         table->buckets[hash] = createPair(key, value);
+      |              ^~
+hashmap.h:28:32: error: implicit declaration of function ‘createPair’; did you mean ‘createMap’? [-Werror=implicit-function-declaration]
+   28 |         table->buckets[hash] = createPair(key, value);
+      |                                ^~~~~~~~~~
+      |                                createMap
+hashmap.h:29:14: error: invalid use of incomplete typedef ‘HashMap’
+   29 |         table->size++;
+      |              ^~
+hashmap.h:33:18: error: ‘Pair’ has no member named ‘next’
+   33 |         while(aux->next!=NULL)
+      |                  ^~
+hashmap.h:40:22: error: ‘Pair’ has no member named ‘next’
+   40 |             aux = aux->next;
+      |                      ^~
+hashmap.h:47:12: error: ‘Pair’ has no member named ‘next’
+   47 |         aux->next = createPair(key, value);
+      |            ^~
+hashmap.h:48:14: error: invalid use of incomplete typedef ‘HashMap’
+   48 |         table->size++;
+      |              ^~
+hashmap.h:24:10: error: variable ‘hash’ set but not used [-Werror=unused-but-set-variable]
+   24 |     long hash = (long)key % table->capacity;
+      |          ^~~~
+In file included from test.c:4:
+hashmap.c: At top level:
+hashmap.c:19:8: error: conflicting types for ‘createPair’; have ‘Pair *(char *, void *)’
+   19 | Pair * createPair( char * key,  void * value) {
+      |        ^~~~~~~~~~
+In file included from hashmap.c:6,
+                 from test.c:4:
+hashmap.h:28:32: note: previous implicit declaration of ‘createPair’ with type ‘int()’
+   28 |         table->buckets[hash] = createPair(key, value);
+      |                                ^~~~~~~~~~
+In file included from test.c:4:
+hashmap.c:42:6: error: redefinition of ‘insertMap’
+   42 | void insertMap(HashMap * map, char * key, void * value) {
+      |      ^~~~~~~~~
+In file included from hashmap.c:6,
+                 from test.c:4:
+hashmap.h:22:6: note: previous definition of ‘insertMap’ with type ‘void(HashMap *, char *, void *)’ {aka ‘void(struct HashMap *, char *, void *)’}
+   22 | void insertMap(HashMap * table, char * key, void * value)
+      |      ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+54a71ac
