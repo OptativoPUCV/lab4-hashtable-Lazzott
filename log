@@ -462,3 +462,14 @@ hashmap.c:132:34: error: suggest parentheses around ‘&&’ within ‘||’ [-W
 cc1: all warnings being treated as errors
 Compilation failed
 130be04
+Sat 27 Apr 2024 11:56:13 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:132:34: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  132 |   while(posicion < map->capacity && map->buckets[posicion] == NULL || map->buckets[posicion]->key == NULL)
+      |                                  ^
+cc1: all warnings being treated as errors
+Compilation failed
+6dcaabe
