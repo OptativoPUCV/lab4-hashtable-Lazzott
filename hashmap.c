@@ -54,20 +54,19 @@ void insertMap(HashMap * map, char * key, void * value)
 
 void enlarge(HashMap * map) 
 {
+    enlarge_called = 1;//no borrar (testing purposes)\
+    hashelem** aux = map->buckets;
     if(map==NULL) return;
-    enlarge_called = 1;//no borrar (testing purposes)
-    Pair ** buckets_old = map->buckets;
-    long capacity_old = map->capacity;
-    map->capacity = map->capacity * 2 + 1;
-    map->buckets = (Pair **)malloc(map->capacity,sizeof(Pair *));
-    for(long i=0;i<capacity_old;i++)
+    int new_capacity = map->capacity*2+1;
+    map->capacity = new_capacity;
+    map->size = 0;
+    map->buckets = (Pair **)realloc(map->buckets,new_capacity*sizeof(Pair*));
+    for(int i=0;i<new_capacity;i++)
       {
-        if(buckets_old[i]!=NULL && buckets_old[i]->key!=NULL)
-        {
-          insertMap(map,buckets_old[i]->key,buckets_old[i]->value);
-        }
+        map->buckets[i] = NULL;
+        insertMap(map,aux[i]->key,aux[i]->value);
+        map->size++;
       }
-    free(buckets_old);
 }
 HashMap * createMap(long capacity) {
 

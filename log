@@ -95,3 +95,18 @@ In file included from test.c:2:
       |              ^~~~~~
 Compilation failed
 ce7abc6
+Sat 27 Apr 2024 09:57:31 PM UTC: 
+ hashmap.c | 21 ++++++++++-----------
+ 1 file changed, 10 insertions(+), 11 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:57:24: error: multi-line comment [-Werror=comment]
+   57 |     enlarge_called = 1;//no borrar (testing purposes)\
+      |                        ^
+hashmap.c:67:23: error: ‘aux’ undeclared (first use in this function)
+   67 |         insertMap(map,aux[i]->key,aux[i]->value);
+      |                       ^~~
+hashmap.c:67:23: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+99bdc17
