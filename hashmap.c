@@ -63,12 +63,10 @@ void enlarge(HashMap * map)
     long i;
     for(i=0;i<capacity_old;i++)
       {
-        if(buckets_old[i]!=NULL && buckets_old[i]->key!=NULL)
-        {
-          insertMap(map,buckets_old[i]->key,buckets_old[i]->value);
-        }
+        map->buckets[i] = NULL;
+        insert(map,buckets_old[i]->key,buckets_old[i]->value);
+        map->size++;
       }
-    free(buckets_old);
 }
 HashMap * createMap(long capacity) 
 {

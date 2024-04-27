@@ -175,3 +175,15 @@ Sat 27 Apr 2024 10:06:24 PM UTC:
  1 file changed, 14 insertions(+)
  tests:  0|0
 a9ab788
+Sat 27 Apr 2024 10:14:35 PM UTC: 
+ hashmap.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:67:9: error: implicit declaration of function ‘insert’; did you mean ‘insertMap’? [-Werror=implicit-function-declaration]
+   67 |         insert(map,buckets_old[i]->key,buckets_old[i]->value);
+      |         ^~~~~~
+      |         insertMap
+cc1: all warnings being treated as errors
+Compilation failed
+b60ad42
