@@ -133,8 +133,10 @@ Pair * nextMap(HashMap * map)
         {
           return map->buckets[map->current];
         }
-        
-        map->current = (map->current+1)%map->capacity;
+        else
+        {
+          map->current = (map->current+1)%map->capacity;
+        }
       }
     return NULL;
 }
