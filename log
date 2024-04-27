@@ -437,3 +437,17 @@ hashmap.c:132:43: error: ‘i’ may be used uninitialized in this function [-We
 cc1: all warnings being treated as errors
 Compilation failed
 81d5288
+Sat 27 Apr 2024 11:54:46 PM UTC: 
+ hashmap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:131:9: error: expected expression before ‘int’
+  131 |   while(int i < map->capacity && (map->buckets[i] == NULL) || map->buckets[i]->key == NULL)
+      |         ^~~
+hashmap.c:133:9: error: ‘i’ undeclared (first use in this function)
+  133 |         i = (i+1)%map->capacity;
+      |         ^
+hashmap.c:133:9: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+92ec938
