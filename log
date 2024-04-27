@@ -130,3 +130,9 @@ hashmap.c:67:41: error: request for member ‘value’ in something not a struct
 cc1: all warnings being treated as errors
 Compilation failed
 306cdfc
+Sat 27 Apr 2024 10:00:25 PM UTC: 
+ hashmap.c | 38 +++++++++++++++++++++-----------------
+ 1 file changed, 21 insertions(+), 17 deletions(-)
+ tests:  8|3
+total_score: 40/70
+f7fb914
