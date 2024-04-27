@@ -293,3 +293,26 @@ hashmap.c:135:17: error: statement with no effect [-Werror=unused-value]
 cc1: all warnings being treated as errors
 Compilation failed
 f6ef2ce
+Sat 27 Apr 2024 10:59:44 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:135:14: error: expected ‘(’ before ‘map’
+  135 |           if map->buckest[map->current] == NULL)
+      |              ^~~
+      |              (
+hashmap.c:135:19: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘buckest’; did you mean ‘buckets’?
+  135 |           if map->buckest[map->current] == NULL)
+      |                   ^~~~~~~
+      |                   buckets
+hashmap.c:135:11: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  135 |           if map->buckest[map->current] == NULL)
+      |           ^~
+hashmap.c:135:48: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  135 |           if map->buckest[map->current] == NULL)
+      |                                                ^
+hashmap.c:135:48: error: expected statement before ‘)’ token
+cc1: all warnings being treated as errors
+Compilation failed
+4e1a52b

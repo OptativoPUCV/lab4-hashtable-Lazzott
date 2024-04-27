@@ -132,7 +132,7 @@ Pair * nextMap(HashMap * map)
         if(map->buckets[map->current]!=NULL && map->buckets[map->current]->key!=NULL)
         {
           return map->buckets[map->current];
-          if map->current == -1
+          if map->buckest[map->current] == NULL)
             {
               return NULL;
             }
