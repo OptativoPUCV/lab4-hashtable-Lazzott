@@ -59,21 +59,16 @@ void enlarge(HashMap * map)
     Pair ** buckets_old = map->buckets;
     long capacity_old = map->capacity;
     map->capacity = map->capacity * 2 + 1;
-    map->buckets = (Pair **)calloc(map->capacity,sizeof(Pair *));
-    map->size = 0;
-    long i = 0;
-    while(i < capacity_old)
+    map->buckets = (Pair **)malloc(map->capacity,sizeof(Pair *));
+    for(long i=0;i<capacity_old;i++)
       {
-        if(buckets_old[i] != NULL && buckets_old[i]->key != NULL)
+        if(buckets_old[i]!=NULL && buckets_old[i]->key!=NULL)
         {
           insertMap(map,buckets_old[i]->key,buckets_old[i]->value);
         }
-        i++;
       }
     free(buckets_old);
 }
-
-
 HashMap * createMap(long capacity) {
 
     return NULL;
