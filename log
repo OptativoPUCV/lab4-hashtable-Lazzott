@@ -222,3 +222,14 @@ hashmap.c:59:10: error: unused variable ‘capacity_old’ [-Werror=unused-varia
 cc1: all warnings being treated as errors
 Compilation failed
 09f3cad
+Sat 27 Apr 2024 10:26:27 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:59:10: error: unused variable ‘capacity_old’ [-Werror=unused-variable]
+   59 |     long capacity_old = map->capacity;
+      |          ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e151aee
