@@ -137,6 +137,7 @@ Pair * nextMap(HashMap * map)
         {
           return NULL;
         }
+        map->current = (map->current+1)%map->capacity;
       }
     return NULL;
 }
