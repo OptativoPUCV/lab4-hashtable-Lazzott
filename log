@@ -395,3 +395,17 @@ hashmap.c:134:9: error: ‘i’ undeclared (first use in this function)
 hashmap.c:134:9: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 80630dd
+Sat 27 Apr 2024 11:51:47 PM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:132:29: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  132 |     while(i < map->capacity && map->buckets[i] == NULL || map->buckets[i]->key == NULL)
+      |                             ^
+hashmap.c:132:44: error: ‘i’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+  132 |     while(i < map->capacity && map->buckets[i] == NULL || map->buckets[i]->key == NULL)
+      |                                            ^
+cc1: all warnings being treated as errors
+Compilation failed
+51968ca
