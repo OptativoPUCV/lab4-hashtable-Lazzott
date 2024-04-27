@@ -55,3 +55,13 @@ hashmap.h:22:6: note: previous definition of ‘insertMap’ with type ‘void(H
 cc1: all warnings being treated as errors
 Compilation failed
 54a71ac
+Sat 27 Apr 2024 09:40:54 PM UTC: 
+ hashmap.c | 14 +++++++++++---
+ 1 file changed, 11 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:47:7: error: expected expression before ‘{’ token
+   47 |       {
+      |       ^
+Compilation failed
+623a7fd
