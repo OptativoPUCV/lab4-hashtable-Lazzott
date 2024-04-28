@@ -730,3 +730,9 @@ hashmap.c:131:5: error: ‘posicion’ undeclared (first use in this function)
 hashmap.c:131:5: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 0273424
+Sun 28 Apr 2024 12:54:51 AM UTC: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  17|0
+total_score: 70/70
+08d5534
