@@ -699,3 +699,23 @@ hashmap.c:130:5: error: ‘posicion’ undeclared (first use in this function)
 hashmap.c:130:5: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 2610d92
+Sun 28 Apr 2024 12:50:51 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:130:24: error: initialization of ‘Pair **’ from ‘long int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  130 |     Pair ** posicion = (map->current+1)%map->capacity;
+      |                        ^
+hashmap.c:131:20: error: comparison between pointer and integer [-Werror]
+  131 |     while(posicion < map->capacity && (map->buckets[posicion] == NULL || map->buckets[posicion]->key == NULL))
+      |                    ^
+hashmap.c:131:52: error: array subscript is not an integer
+  131 |     while(posicion < map->capacity && (map->buckets[posicion] == NULL || map->buckets[posicion]->key == NULL))
+      |                                                    ^
+hashmap.c:131:86: error: array subscript is not an integer
+  131 |     while(posicion < map->capacity && (map->buckets[posicion] == NULL || map->buckets[posicion]->key == NULL))
+      |                                                                                      ^
+cc1: all warnings being treated as errors
+Compilation failed
+70ebc90
