@@ -560,3 +560,14 @@ hashmap.c:138:7: error: expected expression before ‘}’ token
 cc1: all warnings being treated as errors
 Compilation failed
 f0d01ff
+Sun 28 Apr 2024 12:10:59 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:133:45: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  133 |         if(map->buckets[map->current]!=NULL && map->buckets[map->current]->key!=NULL || map->buckets[map->current]==NULL)
+      |                                             ^
+cc1: all warnings being treated as errors
+Compilation failed
+b28998e
