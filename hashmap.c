@@ -128,14 +128,14 @@ Pair * nextMap(HashMap * map)
 {
   if(map==NULL) return NULL;
   long posicion = map->current;
-  while (posicion < map->capacity)
+  while (posicion < map->capacity && map->buckets[posicion] == NULL || map->buckets[posicion]->key == NULL)
     {
-      if(map->buckets[posicion]!=NULL && map->buckets[posicion]->key!=NULL)
-      {
-        posicion = (posicion+1)%map->capacity;
-        map->current = posicion;
-        return map->buckets[posicion];
-      }
+      posicion++;
     }
+  if (posicion == map->capacity)
+  {
     return NULL;
+  }
+  map->current = posicion;
+  return map->buckets[posicion];
 }
