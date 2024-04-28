@@ -629,3 +629,19 @@ Sun 28 Apr 2024 12:19:21 AM UTC:
  tests:  14|1
 total_score: 60/70
 68509b0
+Sun 28 Apr 2024 12:36:18 AM UTC: 
+ hashmap.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:133:87: error: expected ‘)’ before ‘{’ token
+  133 |         if(map->buckets[map->current]!=NULL && (map->buckets[map->current]->key!=NULL)
+      |           ~                                                                           ^
+      |                                                                                       )
+  134 |         {
+      |         ~                                                                              
+hashmap.c:137:7: error: expected expression before ‘}’ token
+  137 |       }
+      |       ^
+Compilation failed
+ef95937
