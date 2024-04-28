@@ -501,3 +501,14 @@ hashmap.c:131:35: error: suggest parentheses around ‘&&’ within ‘||’ [-W
 cc1: all warnings being treated as errors
 Compilation failed
 18a7ceb
+Sun 28 Apr 2024 12:07:29 AM UTC: 
+ hashmap.c | 13 ++++---------
+ 1 file changed, 4 insertions(+), 9 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:130:4: error: ‘posicion’ undeclared (first use in this function)
+  130 |    posicion = map->current;
+      |    ^~~~~~~~
+hashmap.c:130:4: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+2a4930c
