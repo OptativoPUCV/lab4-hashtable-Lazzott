@@ -126,12 +126,11 @@ Pair * firstMap(HashMap * map)
 
 Pair * nextMap(HashMap * map) 
 {
-    if(map==NULL) return NULL;
-    map->current = (map->current+1)%map->capacity;
+  map->current = (map->current+1)%map->capacity;
   long posicion = map->current;
-    while(posicion < map->capacity && (map->buckets[posicion]==NULL || map->buckets[posicion]->key==NULL))
+  while(posicion < map->capacity && (map->buckets[posicion]==NULL || map->buckets[posicion]->key==NULL))
       {
         posicion = (posicion+1)%map->capacity;
       }
-    return NULL;
+  return NULL;
 }
