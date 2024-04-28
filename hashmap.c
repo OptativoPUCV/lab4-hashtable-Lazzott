@@ -129,7 +129,7 @@ Pair * nextMap(HashMap * map)
   map->current = (map->current+1)%map->capacity;
   while(map->current < map->capacity && (map->buckets[map->current]==NULL || map->buckets[map->current]->key==NULL))
       {
-        map->current = (map->current+1)%map->capacity;
+        map->current++;
       }
   return NULL;
 }
