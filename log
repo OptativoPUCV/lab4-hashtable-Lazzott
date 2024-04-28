@@ -512,3 +512,14 @@ hashmap.c:130:4: error: ‘posicion’ undeclared (first use in this function)
 hashmap.c:130:4: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 2a4930c
+Sun 28 Apr 2024 12:08:01 AM UTC: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:130:24: error: ‘posicion’ undeclared (first use in this function)
+  130 |     while(map->buckets[posicion]!=NULL && map->buckets[posicion]->key==NULL)
+      |                        ^~~~~~~~
+hashmap.c:130:24: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+eb21676
