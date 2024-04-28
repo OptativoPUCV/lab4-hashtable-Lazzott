@@ -719,3 +719,14 @@ hashmap.c:131:86: error: array subscript is not an integer
 cc1: all warnings being treated as errors
 Compilation failed
 70ebc90
+Sun 28 Apr 2024 12:52:12 AM UTC: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:131:5: error: ‘posicion’ undeclared (first use in this function)
+  131 |     posicion = map->current;
+      |     ^~~~~~~~
+hashmap.c:131:5: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+0273424
